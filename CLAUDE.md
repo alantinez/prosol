@@ -96,11 +96,11 @@ piezas gráficas de la página:
 
 **Capa "plano".** Se agregó una segunda idea que conecta directo con el rubro (habilitaciones,
 avisos de obra, trámites que llevan planos): toda la página tiene de fondo una grilla técnica
-muy tenue (papel de plano/milimetrado, no azul — se usa el verde de marca en vez del azul
-clásico de blueprint) y "miras" de registro (las crucecitas en círculo que se ven en material
-impreso/planos) en las esquinas de la ilustración del hero y de la ilustración de contacto
-(el panel "Traé esto" NO tiene miras, solo la grilla). Es puramente gráfico (SVG/gradientes
-en CSS), nunca texto — no rompe la regla de "nada en mayúsculas ni monoespaciado" de abajo.
+(papel de plano/milimetrado, en el verde de marca) y "miras" de registro (las crucecitas en
+círculo que se ven en material impreso/planos) en las esquinas de la ilustración del hero y
+de la ilustración de contacto (el panel "Traé esto" NO tiene miras, solo la grilla y un borde
+verde). Es puramente gráfico (SVG/gradientes en CSS), nunca texto — no rompe la regla de
+"nada en mayúsculas ni monoespaciado" de abajo.
 
 **Reemplazo del mapa.** La sección de contacto no tiene mapa embebido (no es un local al que
 se llega por dirección visible desde la calle, es una oficina en un piso; Alan pidió sacarlo,
@@ -109,35 +109,54 @@ quiere que la página invite a "pasar por acá"). En su lugar hay una ilustraci�
 carpeta/expediente con un sello de tilde, en la misma paleta y lógica gráfica que el sello
 del hero.
 
-**Vino, el segundo color.** A pedido de Alan ("me parece mucho blanco, quiero otro color
-manteniendo el verde") se subió de categoría el bordó del sello (`--vino:#8C2F2F`) de detalle
-único a color de marca real, usado en tres lugares para no perder el ritmo verde → vino →
-verde de la página:
-- Los círculos numerados de "Cómo trabajamos" (`.et .n`).
-- Todo el panel "Traé esto y salimos con un plan" (`.panel`), que pasó de tarjeta clara a
-  bloque vino con texto claro y los chips de check en ámbar (mismo lenguaje que los íconos
-  de trámites sobre fondo oscuro).
-- Manchas de color muy suaves (radial-gradient, 6–16% de opacidad) detrás del body, de
-  `.oscuro` y del footer, para que ninguna zona quede en cream liso.
-**La sección "Contanos qué local querés abrir" (`.llamada`) se dejó en verde a propósito**
-— si también fuera vino, quedarían dos bloques vino pegados (panel + llamada) y se perdía el
-ritmo de color. No cambiarla a vino sin repensar la secuencia completa.
+**v5 — lienzo oscuro tipo AutoCAD.** Alan probó una v4 con fondo claro y un segundo color
+(bordó/"vino") y no le gustó — dijo que quedaba "mucho color" y pidió ir a algo tipo plano de
+AutoCAD: fondo gris/negro con líneas verdes, a partir de capturas de planos reales que
+compartió (fondo negro, dibujo técnico en verde). Se sacó el vino de la paleta por completo
+y se dio vuelta el esquema de color: **ya no hay secciones claras**, toda la página es oscura,
+con la grilla de plano mucho más marcada (antes era casi invisible, ahora es el protagonista).
+Jerarquía por tono, no por claro/oscuro:
+- `--fondo` (casi negro, #12150F): el lienzo — hero, "Cómo trabajamos", "Traé esto", contacto.
+- `--verde-hondo` (#2A3D26): franja de "Qué resolvemos" y el pie — un verde medio que se
+  recorta sobre el lienzo negro (antes era al revés: la franja oscura resaltaba sobre body claro).
+- `--verde-panel` (#35492F): tarjetas de trámites, más claro que su contenedor `.oscuro`.
+- `--fondo-alto` (#1A2014): el panel "Traé esto", ahora un bloque oscuro con **borde verde de
+  1.5px** (`rgba(109,140,104,.4)`) en vez de relleno de color — lee como un rectángulo de
+  plano, no como una tarjeta.
+- `--verde` sigue siendo la única franja de color sólido y saturado (la sección "Contanos qué
+  local querés abrir", y ahora también el botón primario `.btn-a`, antes verde-hondo — necesitaba
+  aclararse para resaltar sobre el lienzo casi negro).
+**El texto se dio vuelta:** `--tinta` pasó de ser un verde casi negro (para fondo claro) a ser
+un blanco verdoso claro (`#E9EEDF`), porque ahora es el color de texto por defecto en TODA la
+página. `--gris`/`--gris-claro` también se invirtieron: antes eran grises oscuros para fondo
+claro, ahora son grises claros (`#9FB394` / `#D6E0CB`) para leer sobre los distintos fondos
+oscuros. **Si agregás un color nuevo, pensalo siempre como "texto/línea clara sobre fondo
+oscuro", nunca al revés.**
+**El logo necesita una chapita clara.** El PNG del logo es transparente y el texto "PRO-SOL"
+es negro, así que no se puede apoyar directo sobre fondo oscuro. Por eso lleva una chapita
+clara detrás (`--papel-alto:#F3F1E7`, clase `.placa`/`.placa-chica`) en dos lugares: el `<a>`
+del logo en el header, y el `.placa` del pie. **Es el único blanco/crema que queda a propósito
+en toda la página** — no sacarlo pensando que "hay que sacar todo el blanco", porque sin él el
+logo se vuelve ilegible.
+**El sello sigue en bordó** (`#8C2F2F`, hardcodeado en el SVG del hero y en el de contacto,
+no es un token). A Alan no le molestaba el bordó como detalle chico del sello — lo que rechazó
+fue usarlo como color de fondo grande (la v4). No reintroducir el bordó como superficie
+(fondo de sección, panel, botón) sin volver a preguntar.
 
 ### Tokens
 
 ```css
---papel:#EFEDE3;  --papel-alto:#F8F6EF;  --tinta:#1E2A1B;
+--fondo:#12150F;      --fondo-alto:#1A2014;   --papel-alto:#F3F1E7;  /* solo la chapita del logo */
+--tinta:#E9EEDF;       /* texto por defecto, ahora claro */
 --verde:#4A6B49;  --verde-suave:#6D8C68; --verde-hondo:#2A3D26; --verde-panel:#35492F;
---ambar:#E9A83C;  --vino:#8C2F2F;        --vino-hondo:#6E2424;   --papel-vino:#F3E4E1;
---gris:#5E6A57;   --gris-claro:#B6C2AE;
+--ambar:#E9A83C;
+--gris:#9FB394;   --gris-claro:#D6E0CB;   /* ambos claros — para leer sobre fondos oscuros */
 --r:22px;  --r-xl:44px;  /* botones: border-radius 999px */
 ```
 
 El verde sale del logo. El ámbar es la luz de adentro del local, y se usa poco: iconos, un
-botón, el derrame en la vereda, y los checks del panel vino. El vino es la tinta de sello,
-y desde la v4 es un color de marca de pleno derecho (ver arriba), no solo el trazo del sello.
-**Nada es negro puro** — los títulos van en `--tinta`, un verde casi negro. El negro puro
-era buena parte de la dureza de la versión anterior.
+botón, el derrame en la vereda, los checks del panel. **Nada es negro puro** tampoco en la v5
+— el fondo es `--fondo` (#12150F), un negro con un dejo verde, no `#000`.
 
 ### Tipografías
 
