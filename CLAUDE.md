@@ -52,33 +52,26 @@ hasta que Alan confirme.**
 - **El logo ya está separado** en `logo.png` (460×205) y referenciado por `<img src="logo.png">`
   en cabecera y pie. Antes iba incrustado dos veces en base64 y el HTML pesaba ~100 KB;
   ahora pesa ~26 KB.
-- **Hosting:** Netlify, proyecto `cute-sunshine-22105e`. Se está migrando de "arrastrar
-  archivos a Deploys" a **deploy continuo conectado a este repo de GitHub**
-  (`alantinez/prosol`, rama `main` u otra que se defina). Con eso, cada push publica solo.
+- **Hosting:** Netlify, proyecto `cute-sunshine-22105e`, con **deploy continuo conectado
+  a este repo de GitHub** (`alantinez/prosol`, rama `claude/web-project-context-0adllb`).
+  Cada push a esa rama publica solo — ya no se arrastran archivos a mano. Build command
+  vacío, publish directory `.`.
 - **Dominio:** registrado en NIC.ar con la Clave Fiscal de Gustavo. Vence 21/08/2027.
 - **DNS:** delegado a Netlify DNS. Los cuatro servidores son `dns1` a `dns4.p08.nsone.net`,
   cargados en la sección *Delegaciones* de NIC.ar. La columna "Delegado" figura en SÍ.
 - **`prosol.com.ar` es el dominio primario** y `www` redirige a él.
+- **HTTPS:** certificado emitido y funcionando. `https://prosol.com.ar` carga con candado.
 
 ### Pendientes
 
-1. **Certificado HTTPS.** Es lo único que falta para cerrar la publicación. Quedó en rojo
-   ("We could not provision a Let's Encrypt certificate") porque la delegación era de pocas
-   horas antes. Hay que apretar *Verify DNS configuration* en Netlify → sección HTTPS, y
-   después activar **Force HTTPS**. Netlify reintenta solo en segundo plano.
-2. **Conectar Netlify a este repo de GitHub** (deploy continuo) en vez de arrastrar
-   archivos: en el proyecto existente `cute-sunshine-22105e` → *Project configuration* →
-   *Build & deploy* → *Continuous deployment*, apuntar a `alantinez/prosol`, dejar el
-   comando de build vacío y el directorio de publicación en `.` — nunca crear un proyecto
-   nuevo, porque el dominio apunta al proyecto viejo.
-3. **Ficha de Google.** Sin reclamar. El link "¿Eres propietario de esta empresa?" arranca
+1. **Ficha de Google.** Sin reclamar. El link "¿Eres propietario de esta empresa?" arranca
    la verificación, que hoy suele ser por video. Dos cosas importantes: reclamarla desde la
    cuenta de Google de Gustavo (la titularidad queda fijada ahí), y corregir la categoría
    principal, que hoy dice "Abogado especializado en transacciones inmobiliarias" y lo saca
    de todas las búsquedas útiles. Debería ser "Gestoría" o "Servicio de trámites".
-4. **Fotos reales.** Es lo que más le falta a la página: el frente del edificio, la oficina,
+2. **Fotos reales.** Es lo que más le falta a la página: el frente del edificio, la oficina,
    y Gustavo trabajando. En este rubro la cara vende más que cualquier ilustración.
-5. **Opiniones en Google.** Hoy tiene cero, y eso resta. Pedirlas de a poco y a clientes reales.
+3. **Opiniones en Google.** Hoy tiene cero, y eso resta. Pedirlas de a poco y a clientes reales.
 
 ---
 
