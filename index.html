@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRO-SOL Estudio — Habilitaciones de comercios ante la AGC | Buenos Aires</title>
+<meta name="description" content="Gestoría en Balvanera, CABA. Habilitación de comercios, actividad económica, avisos de obra y trámites ante la AGC y el Gobierno de la Ciudad de Buenos Aires. Gustavo Martínez.">
+<link rel="canonical" href="https://prosol.com.ar/">
+<meta property="og:title" content="PRO-SOL Estudio — Habilitaciones de comercios en CABA">
+<meta property="og:description" content="Habilitaciones, actividad económica y avisos de obra ante la AGC. Estudio en Balvanera.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prosol.com.ar/">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234A6B49'/><rect x='6' y='8' width='20' height='4' rx='2' fill='%23F7F5EE'/><rect x='6' y='14' width='20' height='4' rx='2' fill='%23F7F5EE'/><rect x='6' y='20' width='20' height='4' rx='2' fill='%23F7F5EE'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Newsreader:opsz,wght@6..72,300..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#EFEDE3;
+    --papel-alto:#F8F6EF;
+    --tinta:#1E2A1B;
+    --verde:#4A6B49;
+    --verde-suave:#6D8C68;
+    --verde-hondo:#2A3D26;
+    --verde-panel:#35492F;
+    --ambar:#E9A83C;
+    --gris:#5E6A57;
+    --gris-claro:#B6C2AE;
+
+    --disp:"Archivo",system-ui,sans-serif;
+    --texto:"Newsreader",Georgia,serif;
+
+    --r:22px;
+    --r-xl:44px;
+    --sombra:0 18px 40px rgba(30,42,27,.10);
+    --max:1180px;
+    --pad:clamp(20px,5vw,56px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--papel);color:var(--tinta);
+    font-family:var(--texto);font-size:19px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  h1,h2,h3{
+    font-family:var(--disp);font-weight:800;
+    font-variation-settings:"wdth" 100,"wght" 800;
+    line-height:1.05;letter-spacing:-.015em;margin:0;
+    text-wrap:balance;color:var(--tinta);
+  }
+  h1{font-size:clamp(38px,5.8vw,70px)}
+  h2{font-size:clamp(28px,3.8vw,44px)}
+  p{margin:0}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--ambar);outline-offset:4px;border-radius:6px}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;border-radius:999px;
+    font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:-.005em;
+    padding:15px 26px;text-decoration:none;border:0;cursor:pointer;
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-a{background:var(--verde-hondo);color:#F8F6EF;box-shadow:0 6px 16px rgba(30,42,27,.22)}
+  .btn-a:hover{background:#22331E;box-shadow:0 10px 22px rgba(30,42,27,.28)}
+  .btn-b{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 2px rgba(30,42,27,.28)}
+  .btn-b:hover{box-shadow:inset 0 0 0 2px var(--verde);background:rgba(74,107,73,.09)}
+  .btn-c{background:var(--ambar);color:#2A1F08;box-shadow:0 6px 16px rgba(180,120,20,.28)}
+  .btn-c:hover{background:#F3B854}
+
+  /* ---------- cabecera ---------- */
+  .top{position:sticky;top:0;z-index:60;background:rgba(239,237,227,.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(30,42,27,.07)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:94px;padding-top:14px;padding-bottom:14px}
+  .logo{width:auto;height:clamp(42px,5.2vw,58px)}
+  .top-der{display:flex;align-items:center;gap:20px}
+  .tel-top{font-family:var(--disp);font-weight:700;font-size:16px;text-decoration:none}
+  .tel-top:hover{color:var(--verde)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(24px,4vw,52px) 0 clamp(56px,8vw,96px)}
+  .hero-g{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+  .hero .lead{font-size:clamp(19px,2.05vw,22px);max-width:40ch;margin:26px 0 0;color:#3A4636}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .hero .nota{margin-top:26px;font-size:16px;color:var(--gris);font-family:var(--disp);font-weight:500}
+
+  /* ---------- escena ---------- */
+  .escena{width:100%;height:auto;filter:drop-shadow(0 24px 40px rgba(30,42,27,.16))}
+  .persiana{animation:subir 1.5s cubic-bezier(.66,.03,.28,1) .55s both}
+  @keyframes subir{from{transform:translateY(0)}to{transform:translateY(-268px)}}
+  .luz{opacity:0;animation:prender 1s ease 1.2s both}
+  @keyframes prender{from{opacity:0}to{opacity:1}}
+  .marca-sello{opacity:0;animation:sellar .45s cubic-bezier(.2,1.6,.4,1) 2.1s both;transform-origin:348px 268px}
+  @keyframes sellar{
+    0%{opacity:0;transform:rotate(-26deg) scale(1.55)}
+    65%{opacity:1;transform:rotate(-8deg) scale(.95)}
+    100%{opacity:1;transform:rotate(-11deg) scale(1)}
+  }
+
+  /* ---------- franja oscura con toldo ---------- */
+  .oscuro{
+    position:relative;background:var(--verde-hondo);color:var(--papel-alto);
+    border-radius:var(--r-xl) var(--r-xl) 0 0;
+  }
+  .oscuro::after{
+    content:"";position:absolute;left:0;right:0;top:100%;height:24px;pointer-events:none;
+    background:radial-gradient(circle at 50% 0,var(--verde-hondo) 17.5px,transparent 18px) repeat-x;
+    background-size:36px 24px;
+  }
+  .oscuro h2,.oscuro h3{color:var(--papel-alto)}
+  .bloque{padding:clamp(60px,8vw,110px) 0}
+  .cab{max-width:660px;margin-bottom:clamp(38px,5vw,58px)}
+  .cab p{margin-top:18px;font-size:19px;color:var(--gris)}
+  .oscuro .cab p{color:var(--gris-claro)}
+
+  .servicios{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px}
+  .serv{background:var(--verde-panel);border-radius:var(--r);padding:28px 26px 30px}
+  .serv .ico{
+    width:52px;height:52px;border-radius:50%;background:rgba(233,168,60,.15);
+    display:grid;place-items:center;margin-bottom:18px;
+  }
+  .serv svg{width:26px;height:26px;stroke:var(--ambar);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .serv h3{font-size:20px;margin-bottom:10px;line-height:1.2}
+  .serv p{font-size:16.5px;line-height:1.6;color:var(--gris-claro)}
+
+  /* ---------- etapas ---------- */
+  .etapas{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:34px 30px}
+  .et .n{
+    width:56px;height:56px;border-radius:50%;background:var(--verde);color:#fff;
+    display:grid;place-items:center;margin-bottom:20px;
+    font-family:var(--disp);font-weight:800;font-size:21px;
+    box-shadow:0 8px 18px rgba(74,107,73,.28);
+  }
+  .et h3{font-size:21px;margin-bottom:10px}
+  .et p{font-size:16.5px;line-height:1.6;color:var(--gris)}
+
+  /* ---------- traer ---------- */
+  .panel{background:var(--papel-alto);border-radius:var(--r-xl);padding:clamp(34px,5vw,72px);box-shadow:var(--sombra)}
+  .traer-g{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(30px,5vw,60px);align-items:start}
+  .items{list-style:none;margin:0;padding:0}
+  .items li{display:grid;grid-template-columns:30px 1fr;gap:16px;align-items:start;padding:13px 0;font-size:17.5px}
+  .tick{
+    width:28px;height:28px;border-radius:50%;background:rgba(74,107,73,.14);
+    display:grid;place-items:center;margin-top:4px;
+  }
+  .tick svg{width:15px;height:15px;stroke:var(--verde);fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+  .aviso{
+    background:var(--verde);color:#F2F6F1;padding:28px 30px;margin-top:32px;
+    border-radius:var(--r);font-size:17px;line-height:1.6;
+  }
+  .aviso strong{font-family:var(--disp);font-weight:800;display:block;margin-bottom:8px;font-size:18px;color:#fff}
+
+  /* ---------- llamada ---------- */
+  .llamada{
+    background:var(--verde);color:#F2F6F1;border-radius:var(--r-xl);
+    padding:clamp(38px,5vw,60px) clamp(30px,5vw,64px);
+    display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;
+    box-shadow:0 20px 44px rgba(74,107,73,.26);
+  }
+  .llamada h2{color:#fff;max-width:15ch}
+  .llamada .acc{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* ---------- contacto ---------- */
+  .cont-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,60px);align-items:start}
+  .ficha{list-style:none;margin:34px 0 0;padding:0}
+  .ficha li{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(30,42,27,.13)}
+  .ficha .k{font-family:var(--disp);font-weight:700;font-size:14px;color:var(--gris)}
+  .ficha .v{font-size:18px}
+  .ficha a{text-decoration:none;box-shadow:inset 0 -2px 0 var(--verde-suave);border-radius:3px}
+  .ficha a:hover{background:rgba(74,107,73,.12)}
+  .mapa{width:100%;height:420px;border:0;display:block;background:#DFE0D4}
+  .marco{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sombra)}
+
+  /* ---------- pie ---------- */
+  footer{
+    background:var(--verde-hondo);color:var(--gris-claro);
+    border-radius:var(--r-xl) var(--r-xl) 0 0;margin-top:clamp(60px,8vw,100px);
+    padding:clamp(46px,6vw,70px) 0 40px;font-size:16px;
+  }
+  .pie-g{display:flex;flex-wrap:wrap;gap:34px;justify-content:space-between;align-items:center}
+  .placa{background:var(--papel-alto);padding:18px 24px;border-radius:var(--r);display:inline-block}
+  .placa img{width:172px}
+  .pie-g p{max-width:44ch;line-height:1.6}
+  .pie-abajo{
+    margin-top:38px;padding-top:24px;border-top:1px solid rgba(246,244,236,.14);
+    font-family:var(--disp);font-weight:500;font-size:14px;color:#9DAE95;
+  }
+
+  @media (max-width:880px){
+    .hero-g,.traer-g,.cont-g{grid-template-columns:1fr}
+    .escena-caja{margin-top:36px}
+    .tel-top{display:none}
+    body{font-size:18px}
+    :root{--r-xl:30px}
+    .mapa{height:320px}
+  }
+  @media (max-width:480px){
+    .top .wrap{min-height:70px}
+    .btn{padding:14px 22px;font-size:15px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+    .persiana{transform:translateY(-268px)}
+    .luz,.marca-sello{opacity:1}
+    .marca-sello{transform:rotate(-11deg)}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" aria-label="PRO-SOL Estudio, inicio">
+      <img class="logo" src="logo.png" width="460" height="205" alt="PRO-SOL Estudio">
+    </a>
+    <div class="top-der">
+      <a class="tel-top" href="tel:+541136663571">011 3666-3571</a>
+      <a class="btn btn-a" href="#contacto">Consultar</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div class="wrap hero-g">
+      <div>
+        <h1>El local está listo. Falta el papel.</h1>
+        <p class="lead">
+          Gustavo Martínez gestiona habilitaciones, actividad económica y avisos de obra
+          ante la AGC y el Gobierno de la Ciudad. Vos atendés el negocio; el expediente lo seguimos nosotros.
+        </p>
+        <div class="cta">
+          <a class="btn btn-a" href="tel:+541136663571">Llamar al 011 3666-3571</a>
+          <a class="btn btn-b" href="https://wa.me/5491136663571" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <p class="nota">Estudio en Balvanera · Lunes a viernes hasta las 17 h</p>
+      </div>
+
+      <div class="escena-caja">
+        <svg class="escena" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="Ilustración: la persiana de un local con toldo se levanta y aparece un sello de habilitado">
+          <defs>
+            <clipPath id="vano"><rect x="48" y="140" width="424" height="268" rx="10"/></clipPath>
+            <clipPath id="toldo">
+              <path d="M36,80 H484 L508,142
+                       a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0
+                       a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0
+                       a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0
+                       a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0
+                       a18,18 0 0 1 -36,0 a18,18 0 0 1 -36,0 Z"/>
+            </clipPath>
+            <linearGradient id="gLuz" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FCE1A8"/><stop offset="1" stop-color="#E3A03A"/>
+            </linearGradient>
+            <linearGradient id="gBarra" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6D8C68"/><stop offset="1" stop-color="#39502F"/>
+            </linearGradient>
+          </defs>
+
+          <rect x="0" y="418" width="520" height="62" rx="6" fill="#DFDDD1"/>
+
+          <g class="luz">
+            <polygon points="48,408 472,408 512,478 8,478" fill="#E9A83C" opacity=".24"/>
+          </g>
+
+          <rect x="16" y="40" width="488" height="378" rx="16" fill="#2A3D26"/>
+
+          <!-- interior -->
+          <g class="luz" clip-path="url(#vano)">
+            <rect x="48" y="140" width="424" height="268" fill="url(#gLuz)"/>
+            <g fill="#9A6F26" opacity=".4">
+              <rect x="80" y="214" width="126" height="10" rx="5"/>
+              <rect x="80" y="256" width="126" height="10" rx="5"/>
+              <rect x="80" y="298" width="98" height="10" rx="5"/>
+              <rect x="74" y="332" width="160" height="76" rx="10"/>
+            </g>
+            <rect x="118" y="140" width="4" height="48" fill="#9A6F26" opacity=".4"/>
+            <circle cx="120" cy="192" r="25" fill="#FFF7E3" opacity=".92"/>
+          </g>
+
+          <!-- persiana -->
+          <g clip-path="url(#vano)">
+            <g class="persiana">
+              <rect x="48" y="140" width="424" height="268" fill="url(#gBarra)"/>
+              <g fill="#22331E" opacity=".42">
+                <rect x="48" y="154" width="424" height="4" rx="2"/><rect x="48" y="174" width="424" height="4" rx="2"/>
+                <rect x="48" y="194" width="424" height="4" rx="2"/><rect x="48" y="214" width="424" height="4" rx="2"/>
+                <rect x="48" y="234" width="424" height="4" rx="2"/><rect x="48" y="254" width="424" height="4" rx="2"/>
+                <rect x="48" y="274" width="424" height="4" rx="2"/><rect x="48" y="294" width="424" height="4" rx="2"/>
+                <rect x="48" y="314" width="424" height="4" rx="2"/><rect x="48" y="334" width="424" height="4" rx="2"/>
+                <rect x="48" y="354" width="424" height="4" rx="2"/><rect x="48" y="374" width="424" height="4" rx="2"/>
+                <rect x="48" y="394" width="424" height="4" rx="2"/>
+              </g>
+              <rect x="48" y="400" width="424" height="8" rx="4" fill="#101A0E"/>
+            </g>
+          </g>
+
+          <!-- toldo a rayas con volado -->
+          <g clip-path="url(#toldo)">
+            <rect x="0" y="70" width="520" height="100" fill="#EFEDE3"/>
+            <g fill="#4A6B49">
+              <rect x="8" y="70" width="36" height="100"/><rect x="80" y="70" width="36" height="100"/>
+              <rect x="152" y="70" width="36" height="100"/><rect x="224" y="70" width="36" height="100"/>
+              <rect x="296" y="70" width="36" height="100"/><rect x="368" y="70" width="36" height="100"/>
+              <rect x="440" y="70" width="36" height="100"/>
+            </g>
+            <rect x="0" y="132" width="520" height="38" fill="#22331E" opacity=".14"/>
+          </g>
+
+          <!-- sello -->
+          <g class="marca-sello">
+            <g transform="translate(348,268)">
+              <circle r="78" fill="none" stroke="#8C2F2F" stroke-width="5" opacity=".92"/>
+              <circle r="67" fill="none" stroke="#8C2F2F" stroke-width="1.6" opacity=".8"/>
+              <path id="arcoSello" d="M -51,0 A 51,51 0 0 1 51,0" fill="none"/>
+              <text font-family="Archivo,sans-serif" font-weight="800" font-size="21"
+                    fill="#8C2F2F" letter-spacing="1" opacity=".94">
+                <textPath href="#arcoSello" startOffset="50%" text-anchor="middle">HABILITADO</textPath>
+              </text>
+              <rect x="-47" y="9" width="94" height="2.5" rx="1.2" fill="#8C2F2F" opacity=".75"/>
+              <text y="36" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700"
+                    font-size="15" fill="#8C2F2F" opacity=".92">PRO-SOL</text>
+              <text y="56" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="500"
+                    font-size="12" fill="#8C2F2F" opacity=".8">AGC · CABA</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="oscuro bloque" id="tramites">
+    <div class="wrap">
+      <div class="cab">
+        <h2>Qué resolvemos</h2>
+        <p>Si tu caso no está acá, preguntá igual. Buena parte del trabajo es saber qué expediente corresponde antes de presentar nada.</p>
+      </div>
+
+      <div class="servicios">
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M4 12h24v16H4z"/><path d="M4 12l3-7h18l3 7"/><path d="M13 28v-9h6v9"/></svg></div>
+          <h3>Habilitación de comercios</h3>
+          <p>Gastronomía, indumentaria, oficinas, depósitos y servicios. Simple o con plano, según lo que exija el rubro.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M7 5h13l5 5v17H7z"/><path d="M20 5v5h5"/><path d="M12 17h9M12 22h9"/></svg></div>
+          <h3>Actividad económica</h3>
+          <p>Alta, modificación y regularización del permiso ante la Agencia Gubernamental de Control.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M5 11h16l-4-4M27 21H11l4 4"/></svg></div>
+          <h3>Transferencia de titularidad</h3>
+          <p>Comprás un local que ya funciona: pasamos la habilitación a tu nombre o al de tu sociedad.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M4 6h11v11H4zM17 6h11v11H17zM4 19h11v7H4z"/><path d="M22.5 19v9M18 23.5h9"/></svg></div>
+          <h3>Ampliación de rubro</h3>
+          <p>Sumás cocina, elaboración o un servicio nuevo. Se anexa al expediente que ya tenés.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M4 7h24v18H4z"/><path d="M4 13h24M4 19h24"/><path d="M13 7v6M22 13v6M13 19v6"/></svg></div>
+          <h3>Avisos de obra</h3>
+          <p>Reformas, cambios de distribución y trabajos que hay que declarar antes de que arranque el albañil.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M5 5h22v14H5z"/><path d="M16 19v8M11 27h10"/><path d="M10 10h12M10 14h7"/></svg></div>
+          <h3>Publicidad y cartelería</h3>
+          <p>Permisos para el cartel del frente, toldos y anuncios sobre la vía pública.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M6 4h13v24H6z"/><path d="M19 16h8m0 0l-3-3m3 3l-3 3"/><circle cx="14" cy="16" r="1.4"/></svg></div>
+          <h3>Plan de evacuación</h3>
+          <p>Confección, presentación y actualización del plan que la Ciudad exige según superficie y actividad.</p>
+        </article>
+        <article class="serv">
+          <div class="ico"><svg viewBox="0 0 32 32"><path d="M16 4l13 23H3z"/><path d="M16 13v7"/><circle cx="16" cy="23.5" r="1.3" fill="#E9A83C" stroke="none"/></svg></div>
+          <h3>Intimaciones y clausuras</h3>
+          <p>Te llegó una intimación o el trámite quedó frenado hace meses. Lo revisamos y te decimos qué se puede hacer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPAS -->
+  <section class="bloque" id="como" style="padding-top:clamp(78px,9vw,124px)">
+    <div class="wrap">
+      <div class="cab">
+        <h2>Cómo trabajamos</h2>
+        <p>Un trámite se atrasa casi siempre por lo mismo: se presenta antes de tener todo. Por eso la primera etapa es sentarse a ver qué corresponde.</p>
+      </div>
+      <ol class="etapas" style="list-style:none;margin:0;padding:0">
+        <li class="et">
+          <div class="n">1</div>
+          <h3>Consulta</h3>
+          <p>Contanos el rubro, los metros y la dirección exacta. Con esos tres datos ya se sabe qué habilitación corresponde y qué va a costar.</p>
+        </li>
+        <li class="et">
+          <div class="n">2</div>
+          <h3>Documentación</h3>
+          <p>Armamos la lista precisa de lo que hay que reunir y quién firma cada cosa. Sin idas y vueltas a la mesa de entradas.</p>
+        </li>
+        <li class="et">
+          <div class="n">3</div>
+          <h3>Presentación</h3>
+          <p>Se presenta el expediente y se lo sigue ante el organismo, incluida la inspección. Te avisamos en cada movimiento.</p>
+        </li>
+        <li class="et">
+          <div class="n">4</div>
+          <h3>Certificado</h3>
+          <p>Te entregamos la habilitación y todo lo que tengas que exhibir en el local ante una inspección.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- QUÉ TRAER -->
+  <section id="consulta" style="padding:0 0 clamp(60px,8vw,100px)">
+    <div class="wrap">
+      <div class="panel traer-g">
+        <div>
+          <h2>Traé esto y salimos con un plan</h2>
+          <p style="margin-top:20px;color:var(--gris)">
+            No hace falta que tengas todo. Con lo que traigas alcanza para saber si el local es habilitable y cuánto puede demorar.
+          </p>
+          <div class="aviso">
+            <strong>¿Todavía no alquilaste?</strong>
+            Es el mejor momento para consultar. Hay locales que no se pueden habilitar para ciertos rubros,
+            y conviene saberlo antes de firmar el contrato.
+          </div>
+        </div>
+
+        <ul class="items">
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>Contrato de alquiler o escritura del local</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>Plano del local, si lo tenés</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>CUIT y datos del titular o de la sociedad</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>Dirección exacta y superficie en metros cuadrados</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>Rubro o actividad que querés habilitar</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg></span><span>Cualquier habilitación o expediente anterior del local</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLAMADA -->
+  <section style="padding:0 0 clamp(60px,8vw,100px)">
+    <div class="wrap">
+      <div class="llamada">
+        <h2>Contanos qué local querés abrir</h2>
+        <div class="acc">
+          <a class="btn btn-c" href="tel:+541136663571">Llamar al 011 3666-3571</a>
+          <a class="btn btn-a" href="https://wa.me/5491136663571" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" style="padding:0 0 clamp(20px,3vw,40px)">
+    <div class="wrap cont-g">
+      <div>
+        <h2>Balvanera, a pasos de la Línea A</h2>
+        <ul class="ficha">
+          <li><span class="k">Dirección</span><span class="v">Azcuénaga 10, 3.º piso, oficina 6<br>C1029 · Ciudad Autónoma de Buenos Aires</span></li>
+          <li><span class="k">Teléfono</span><span class="v"><a href="tel:+541136663571">011 3666-3571</a></span></li>
+          <li><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/5491136663571" target="_blank" rel="noopener">Escribir por WhatsApp</a></span></li>
+          <li><span class="k">Horario</span><span class="v">Lunes a viernes, hasta las 17 h</span></li>
+          <li><span class="k">Subte</span><span class="v">Línea A, estaciones Alberti o Pasco</span></li>
+        </ul>
+      </div>
+      <div class="marco">
+        <iframe class="mapa" title="Mapa: Azcuénaga 10, Ciudad Autónoma de Buenos Aires"
+          src="https://maps.google.com/maps?q=Azcu%C3%A9naga%2010%2C%20C1029%20CABA&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pie-g">
+      <div class="placa"><img src="logo.png" width="460" height="205" alt="PRO-SOL Estudio"></div>
+      <p>Asesoramiento y gestiones ante organismos oficiales y ante el Gobierno de la Ciudad de Buenos Aires.</p>
+    </div>
+    <p class="pie-abajo">Azcuénaga 10, 3.º piso, oficina 6 · CABA · 011 3666-3571</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"PRO-SOL Estudio — Gustavo Martínez",
+  "description":"Gestoría especializada en habilitaciones de comercios y trámites ante la AGC y el Gobierno de la Ciudad de Buenos Aires.",
+  "url":"https://prosol.com.ar/",
+  "telephone":"+541136663571",
+  "areaServed":"Ciudad Autónoma de Buenos Aires",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Azcuénaga 10, 3.º piso, oficina 6",
+    "addressLocality":"Ciudad Autónoma de Buenos Aires",
+    "postalCode":"C1029",
+    "addressCountry":"AR"
+  },
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "closes":"17:00"
+  }]
+}
+</script>
+
+</body>
+</html>
