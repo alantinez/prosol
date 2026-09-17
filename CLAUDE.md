@@ -69,8 +69,11 @@ hasta que Alan confirme.**
    cuenta de Google de Gustavo (la titularidad queda fijada ahí), y corregir la categoría
    principal, que hoy dice "Abogado especializado en transacciones inmobiliarias" y lo saca
    de todas las búsquedas útiles. Debería ser "Gestoría" o "Servicio de trámites".
-2. **Fotos reales.** Es lo que más le falta a la página: el frente del edificio, la oficina,
-   y Gustavo trabajando. En este rubro la cara vende más que cualquier ilustración.
+2. **Fotos reales — limitado.** No es un local a la calle, es una oficina (3.º piso), así
+   que no aplica mostrar vidriera ni mostrador. Como mucho, foto del frente del edificio
+   en Azcuénaga 10. No forzar fotos de "oficina" o "Gustavo trabajando" si no las quieren
+   compartir — la ilustración del local (SVG del hero) queda como recurso principal, no
+   como algo a reemplazar necesariamente.
 3. **Opiniones en Google.** Hoy tiene cero, y eso resta. Pedirlas de a poco y a clientes reales.
 
 ---
