@@ -98,26 +98,44 @@ piezas gráficas de la página:
 avisos de obra, trámites que llevan planos): toda la página tiene de fondo una grilla técnica
 muy tenue (papel de plano/milimetrado, no azul — se usa el verde de marca en vez del azul
 clásico de blueprint) y "miras" de registro (las crucecitas en círculo que se ven en material
-impreso/planos) en las esquinas de la ilustración del hero, del panel "Traé esto" y de la
-ilustración de contacto. Es puramente gráfico (SVG/gradientes en CSS), nunca texto — no
-rompe la regla de "nada en mayúsculas ni monoespaciado" de abajo.
+impreso/planos) en las esquinas de la ilustración del hero y de la ilustración de contacto
+(el panel "Traé esto" NO tiene miras, solo la grilla). Es puramente gráfico (SVG/gradientes
+en CSS), nunca texto — no rompe la regla de "nada en mayúsculas ni monoespaciado" de abajo.
 
 **Reemplazo del mapa.** La sección de contacto no tiene mapa embebido (no es un local al que
-se llega por dirección visible desde la calle, es una oficina en un piso; Alan pidió sacarlo).
-En su lugar hay una ilustración propia: una carpeta/expediente con un sello de tilde, en la
-misma paleta y lógica gráfica que el sello del hero.
+se llega por dirección visible desde la calle, es una oficina en un piso; Alan pidió sacarlo,
+y también sacó el encabezado "Balvanera, a pasos de la Línea A" y el dato de subte — no
+quiere que la página invite a "pasar por acá"). En su lugar hay una ilustración propia: una
+carpeta/expediente con un sello de tilde, en la misma paleta y lógica gráfica que el sello
+del hero.
+
+**Vino, el segundo color.** A pedido de Alan ("me parece mucho blanco, quiero otro color
+manteniendo el verde") se subió de categoría el bordó del sello (`--vino:#8C2F2F`) de detalle
+único a color de marca real, usado en tres lugares para no perder el ritmo verde → vino →
+verde de la página:
+- Los círculos numerados de "Cómo trabajamos" (`.et .n`).
+- Todo el panel "Traé esto y salimos con un plan" (`.panel`), que pasó de tarjeta clara a
+  bloque vino con texto claro y los chips de check en ámbar (mismo lenguaje que los íconos
+  de trámites sobre fondo oscuro).
+- Manchas de color muy suaves (radial-gradient, 6–16% de opacidad) detrás del body, de
+  `.oscuro` y del footer, para que ninguna zona quede en cream liso.
+**La sección "Contanos qué local querés abrir" (`.llamada`) se dejó en verde a propósito**
+— si también fuera vino, quedarían dos bloques vino pegados (panel + llamada) y se perdía el
+ritmo de color. No cambiarla a vino sin repensar la secuencia completa.
 
 ### Tokens
 
 ```css
 --papel:#EFEDE3;  --papel-alto:#F8F6EF;  --tinta:#1E2A1B;
 --verde:#4A6B49;  --verde-suave:#6D8C68; --verde-hondo:#2A3D26; --verde-panel:#35492F;
---ambar:#E9A83C;  --gris:#5E6A57;        --gris-claro:#B6C2AE;
+--ambar:#E9A83C;  --vino:#8C2F2F;        --vino-hondo:#6E2424;   --papel-vino:#F3E4E1;
+--gris:#5E6A57;   --gris-claro:#B6C2AE;
 --r:22px;  --r-xl:44px;  /* botones: border-radius 999px */
 ```
 
-El verde sale del logo. El ámbar es la luz de adentro del local, y se usa poco: iconos,
-un botón, el derrame en la vereda. El sello va en bordó `#8C2F2F`, que es tinta de sello.
+El verde sale del logo. El ámbar es la luz de adentro del local, y se usa poco: iconos, un
+botón, el derrame en la vereda, y los checks del panel vino. El vino es la tinta de sello,
+y desde la v4 es un color de marca de pleno derecho (ver arriba), no solo el trazo del sello.
 **Nada es negro puro** — los títulos van en `--tinta`, un verde casi negro. El negro puro
 era buena parte de la dureza de la versión anterior.
 
