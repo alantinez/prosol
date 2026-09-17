@@ -87,11 +87,25 @@ está cerrado, sube cuando abrís. Que es literalmente el servicio. De ahí sale
 piezas gráficas de la página:
 
 - **El hero** es un local dibujado en SVG cuya persiana se levanta al cargar, se prende la
-  luz adentro, la luz se derrama en la vereda y cae un sello de HABILITADO.
+  luz adentro, la luz se derrama en la vereda y cae un sello de HABILITADO. Es clickeable:
+  tocarlo (o Enter/Espacio con teclado) vuelve a sellar, como gag de marca.
 - **El toldo a rayas con volado.** Es lo que ablanda el diseño, que en una versión anterior
   quedó demasiado cuadrado. El mismo volado de semicírculos reaparece como separador entre
   la sección verde y la siguiente. Las curvas de la página vienen de acá, no de esquinas
   redondeadas genéricas.
+
+**Capa "plano".** Se agregó una segunda idea que conecta directo con el rubro (habilitaciones,
+avisos de obra, trámites que llevan planos): toda la página tiene de fondo una grilla técnica
+muy tenue (papel de plano/milimetrado, no azul — se usa el verde de marca en vez del azul
+clásico de blueprint) y "miras" de registro (las crucecitas en círculo que se ven en material
+impreso/planos) en las esquinas de la ilustración del hero, del panel "Traé esto" y de la
+ilustración de contacto. Es puramente gráfico (SVG/gradientes en CSS), nunca texto — no
+rompe la regla de "nada en mayúsculas ni monoespaciado" de abajo.
+
+**Reemplazo del mapa.** La sección de contacto no tiene mapa embebido (no es un local al que
+se llega por dirección visible desde la calle, es una oficina en un piso; Alan pidió sacarlo).
+En su lugar hay una ilustración propia: una carpeta/expediente con un sello de tilde, en la
+misma paleta y lógica gráfica que el sello del hero.
 
 ### Tokens
 
@@ -117,10 +131,22 @@ era buena parte de la dureza de la versión anterior.
 
 ### Reglas de diseño que conviene respetar
 
-- **Una sola animación**, la del hero, y ocurre al cargar. No agregar apariciones al hacer
-  scroll ni efectos en cada tarjeta.
-- `prefers-reduced-motion` está respetado: la persiana arranca arriba y el sello visible.
-- Alineación a la izquierda en todo. Nada centrado.
+- **Ya no rige "una sola animación".** Esa regla era de la v2 del diseño; a pedido de Alan
+  (quería la página "más linda, interactiva y moderna") se agregó interactividad real en la v3:
+  - Aparición progresiva (`.reveal`) de tarjetas, etapas y paneles al hacer scroll, vía
+    `IntersectionObserver`, con stagger por `--i` en el `style` inline de cada elemento.
+  - Nav con estado activo por scroll-spy (resalta la sección que se está leyendo) y menú
+    hamburguesa en mobile.
+  - Barra de avance de scroll (finita, ámbar) debajo del header.
+  - Hover con "solapa doblada" en las tarjetas de trámites (esquina que se pliega, como un
+    expediente) y línea punteada que conecta los círculos numerados de "Cómo trabajamos".
+  - El sello del hero es clickeable (ver arriba).
+  Todo lo nuevo respeta `prefers-reduced-motion`: si está activo, el JS agrega la clase `.on`
+  a todos los `.reveal` de una, sin esperar el scroll, y la regla `*{transition:none!important}`
+  que ya existía anula todo lo demás. **Si se agrega una animación/transición nueva, probarla
+  con reduced-motion activado antes de subir.**
+- Alineación a la izquierda en todo. Nada centrado. (La nav quedó agrupada a la izquierda,
+  junto al logo, y el bloque de teléfono/CTA a la derecha — nunca centrada como conjunto.)
 - Sombras suaves y difusas, no bloques desplazados.
 
 ### Trampa del SVG
@@ -128,6 +154,13 @@ era buena parte de la dureza de la versión anterior.
 La animación `subir` usa `translateY(-268px)`, y 268 es exactamente la altura del vano
 (`y=140` a `y=408` en el `clipPath#vano`). **Si cambiás la geometría del local, tenés que
 cambiar los dos valores juntos** o la persiana queda a mitad de camino.
+
+### Trampa del header pegajoso
+
+El header es `position:sticky`. Como ahora hay nav con anclas (`#tramites`, `#como`,
+`#consulta`, `#contacto`), esas cuatro secciones tienen `scroll-margin-top:104px` para que
+el header no tape el título al navegar. **Si cambia la altura del header** (el `min-height`
+de `.top .wrap`, hoy 94px, más el borde), hay que ajustar ese `104px` a la par.
 
 ---
 
